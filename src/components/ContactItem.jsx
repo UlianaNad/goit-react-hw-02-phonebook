@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function ContactItem({ id,userName, phoneNumber }) {
+function ContactItem({ name, phone }) {
   return (
 
     <div>
-        <span>{id}</span>
-      <span>{userName}</span>
-      <span>{phoneNumber}</span>
+      <span>{name}</span>
+      <span>{phone}</span>
       <button>Delete</button>
     </div>
   );
