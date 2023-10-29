@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyledButtonSubmit, StyledForm, StyledInput } from './AddContact.styled';
+import PropTypes from 'prop-types';
 
 export class AddContactForm extends React.Component {
   state = {
@@ -14,7 +15,6 @@ export class AddContactForm extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
     this.props.addContact(this.state);
     this.setState({
       name: '',
@@ -50,3 +50,10 @@ export class AddContactForm extends React.Component {
     );
   }
 }
+
+AddContactForm.propTypes = {
+  state: PropTypes.shape({
+    name: PropTypes.string,
+    number: PropTypes.string,
+  }),
+};
